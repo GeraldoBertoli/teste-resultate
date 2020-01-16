@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #fefefe, #c2c8ce);
+}
+
+.error {
+    color: #FF0000;
+}
+
+/*###############################*/
+/*CABEÇALHO*/
+#imgCabecalho {
+    width: 100%;
+}
+
+/*###############################*/
+/*MENU*/
+#menu {
+    background-color: #034670;
+    max-width: 100%;
+}
+
+.txtCarros {
+    text-decoration: none;
+    color: #ffffff;
+}
+/*###############################*/
+/*CONTEUDO*/
+#conteudo {
+    margin-top: 20px;
+}
+
+/*###############################*/
+/*TARJA*/
+#tarja {
+    background-color: #d5dade;
+}
+
+#novoPolo1 {
+    border-right: 1px solid #28466b
+}
+
+.txtTarja {
+    white-space: nowrap;
+    font-size: 12px;
+    color: #28466b;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tarjaValor {
+    margin-left: 4px;
+}
+
+#carro {
+    max-width: 100%;
+}
+
+/*###############################*/
+/*formulário*/
+#txtForm1 {
+    color: #205d87;
+}
+
+#txtForm2 {
+    color: #1f5c87;
+}
+
+#btnGaranta {
+    background-color: #70b85b;
+}
+
+#txtBtnGaranta {
+    color: #fbfbfc;
+}
+
+textarea {
+    resize: none;
+}
+
+/*###############################*/
+/*TARJA AZUL*/
+#tarjaAzul {
+    background-color: #0478bc;
+    max-width: 100%;
+    margin: 0;
+    padding-top: 15px;
+    padding-right: 45px;
+    padding-left: 45px;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #084c7b;
+}
+
+#txtTarjaAzul {
+    color: #ffffff;
+    font-size: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+/*###############################*/
+/*LOGO VITORIAWAGEN*/
+#bgLogoVitoriawagen {
+    background-color: #ffffff;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*###############################*/
+/*LOGO VITORIAWAGEN*/
+#menuCidade {
+    background-color: #084c7b;
+    max-width: 100%;
+}
+
+.txtCidade {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*###############################*/
+/*RODAPÉ*/
+.material-icons { 
+    color: rgba(255, 255, 255, 1);
+}
+
+#tarjaEndereco {
+    background-color: #084c7b;
+    width: 100%;
+    margin: 0;
+}
+
+.txtContato {
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+#facebook {
+    width: 11px;
+}
+
+#instagram {
+    width: 20px;
+}
+
+.rowEndereco {
+    width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+    .txtTarja {
+        font-size: 2.5vw;
+    }
+    #conteudo {
+        margin-top: 2vw;
+    }
+    #tarjaAzul {
+        padding-top: 2%;
+        padding-right: 10%;
+        padding-left: 10%;
+        padding-bottom: 2%;
+    }
+    #txtTarjaAzul {
+        font-size: 1.5vw;
+    }
+}

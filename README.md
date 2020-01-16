@@ -1,0 +1,2 @@
+<h1>Teste para processo seletivo da empresa Resultate</h1>
+<p><strong>INSTRUÇÕES:</strong> Gerar o banco <strong>MySQL</strong> através do script <strong>script-banco.sql</strong> e configurar as informações para conexão no arquivo <strong>ConfigDB.php</strong>.</p>
