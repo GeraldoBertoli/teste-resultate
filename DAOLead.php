@@ -14,9 +14,9 @@ class DAOLead {
         $sql = "INSERT INTO leads (nome, telefone, email, mensagem) VALUES ('" . $nome ."', '" . $telefone ."', '" . $email ."', '" . $mensagem ."')";
          
         if ($con->query($sql) === TRUE) {
-            echo "Funcionou";
+            return true;
         } else {
-            echo "Erro: " . $sql . "<br>" . $con->error;
+            return false;
         }
 
         $con->close();

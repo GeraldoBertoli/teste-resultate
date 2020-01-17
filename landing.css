@@ -7,6 +7,11 @@ body {
     background-image: linear-gradient(to bottom, #fefefe, #c2c8ce);
 }
 
+.txtCarros {
+    margin: 0;
+    padding: 0;
+}
+
 .error {
     color: #FF0000;
 }
@@ -45,7 +50,6 @@ body {
 }
 
 .txtTarja {
-    white-space: nowrap;
     font-size: 12px;
     color: #28466b;
     font-weight: bold;
@@ -78,8 +82,12 @@ body {
     color: #fbfbfc;
 }
 
-textarea {
-    resize: none;
+.inputs {
+    margin-top: 5px;
+}
+
+#sucessoMsg {
+    color: #70b85b;
 }
 
 /*###############################*/
@@ -87,7 +95,7 @@ textarea {
 #tarjaAzul {
     background-color: #0478bc;
     max-width: 100%;
-    margin: 0;
+    margin: 20px 0 0 0;
     padding-top: 15px;
     padding-right: 45px;
     padding-left: 45px;
@@ -137,7 +145,6 @@ textarea {
 
 .txtContato {
     color: #ffffff;
-    white-space: nowrap;
 }
 
 #facebook {
@@ -150,6 +157,10 @@ textarea {
 
 .rowEndereco {
     width: 100%;
+}
+
+.justify-content-center {
+    text-align: center;
 }
 
 @media screen and (max-width: 576px) {
@@ -168,4 +179,5 @@ textarea {
     #txtTarjaAzul {
         font-size: 1.5vw;
     }
+    .txt
 }

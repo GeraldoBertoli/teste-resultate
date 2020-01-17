@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="landing.css">
+        <script src="eventos.js" language="javascript"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -17,6 +18,7 @@
 
             $nome = $email = $telefone = $mensagem = "";
             $nomeErr = $emailErr = $telefoneErr = $mensagemErr = "";
+            $sucessoMsg = "";
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (empty($_POST["nome"])) {
@@ -62,7 +64,10 @@
                 if (empty($nomeErr) and empty($emailErr) and empty($telefoneErr) and empty($mensagemErr)) {
                     $lead = new Lead($nome, $email, $telefone, $mensagem);
                     $control = new LandingForm();
-                    $control->salvar($lead);
+
+                    if ($control->salvar($lead)) {
+                        $sucessoMsg = "<span id='sucessoMsg'><strong>Seus dados foram salvos com sucesso!</strong></span>";
+                    }
                 }
 
             }
@@ -80,10 +85,10 @@
         </picture>
         <ul id="menu" class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link txtCarros" href="#">Novo Polo</a>
+                <p onclick="carroPolo(this)" class="nav-link txtCarros">Novo Polo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link txtCarros" style="text-decoration: none;" href="#">Up!</a>
+                <p onclick="carroUp(this)" class="nav-link txtCarros">Up!</a>
             </li>
         </ul>
 
@@ -92,15 +97,15 @@
                 <div class="col-md-6">
                     <div class="col-8 justify-content-center">
                         <div id="tarja" class="row justify-content-center">
-                            <div id="novoPolo1" class="col-2 justify-content-center">
+                            <div id="novoPolo1" class="col-4 justify-content-center">
                                     <div class="row justify-content-center">
-                                        <p class="txtTarja">NOVO POLO</p>
+                                        <p id="nomeCarro" class="txtTarja">NOVO POLO</p>
                                     </div>
                                     <div class="row justify-content-center">
                                         <p class="txtTarja">1.0 MPI</p>
                                     </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-8">
                                 <div class="row">
                                     <p class="txtTarja tarjaValor">A PARTIR DE <strong>R$ 49.990,00</strong></p>
                                 </div>
@@ -122,18 +127,19 @@
                         <p id="txtForm2"><strong>Escolha o modelo que você deseja e receba ofertas imperdíveis em primeira mão.</strong></p>
                     </div>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="row justify-content-center">
-                        <div class="col-md-3">
-                            <input type="text" name="nome" value="<?php echo $nome;?>" placeholder="nome">
+                        <div class="col-lg-6">
+                            <input class="container-fluid inputs" type="text" name="nome" value="<?php echo $nome;?>" placeholder="nome">
                             <span class="error"><?php echo $nomeErr;?></span>
-                            <input type="email" name="email" value="<?php echo $email;?>" placeholder="e-mail">
+                            <input class="container-fluid inputs" type="email" name="email" value="<?php echo $email;?>" placeholder="e-mail">
                             <span class="error"><?php echo $emailErr;?></span>
-                            <input type="telefone" name="telefone" value="<?php echo $telefone;?>" placeholder="telefone">
+                            <input class="container-fluid inputs" type="telefone" name="telefone" value="<?php echo $telefone;?>" placeholder="telefone">
                             <span class="error"><?php echo $telefoneErr;?></span>
                         </div>
-                        <div class="col-md-3">
-                            <textarea name="mensagem" rows="5" cols="30" placeholder="mensagem"><?php echo $mensagem;?></textarea>
+                        <div class="col-lg-6">
+                            <textarea class="container-fluid inputs" name="mensagem" rows="4" style="resize: none" placeholder="mensagem"><?php echo $mensagem;?></textarea>
                             <span class="error"><?php echo $mensagemErr;?></span>
-                            <button type="submit" id="btnGaranta" class="btn btn-success"><p id="txtBtnGaranta" style="white-space: nowrap; margin: 0; padding: 0;">GARANTA AGORA</p></button>
+                            <button class="container-fluid" type="submit" id="btnGaranta" class="btn btn-success"><p id="txtBtnGaranta" style="white-space: nowrap; margin: 0; padding: 0;">GARANTA AGORA</p></button>
+                            <?php echo $sucessoMsg ?>
                         </div>
                     </form>
                 </div>
@@ -151,10 +157,10 @@
         </div>
         <ul id="menuCidade" class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link txtCidade" href="#">Vitória</a>
+                <p onclick="cidadeVitoria()" class="nav-link txtCidade">Vitória</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link txtCidade" href="#">Serra</a>
+                <p onclick="cidadeSerra()" class="nav-link txtCidade">Serra</a>
             </li>
         </ul>
         <div id="tarjaEndereco" class="row">
@@ -162,15 +168,15 @@
                 <div class="col-1">
                     <i class="material-icons">room</i>
                 </div>
-                <div class="col-3">
-                    <p class="txtContato">Av. Vitória, 1047 - Romão - Vitória - Cep 29041-405</p>
+                <div class="col-xl-4">
+                    <p id="endereco" class="txtContato">Av. Vitória, 1047 - Romão - Vitória - Cep 29041-405</p>
                 </div>
             </div>
             <div class="row justify-content-center rowEndereco">
                 <div class="col-1">
                     <i class="material-icons">mail</i>
                 </div>
-                <div class="col-2">
+                <div class="col-xl-3">
                     <p class="txtContato">E-mail: vitoriawagen@grupolider.com.br</p>
                 </div>
             </div>
@@ -178,8 +184,8 @@
                 <div class="col-1">
                     <i class="material-icons">phone</i>
                 </div>
-                <div class="col-1">
-                    <p class="txtContato">Tel (27) 3331-8100</p>
+                <div class="col-xl-2">
+                    <p id="telefone" class="txtContato">Tel (27) 3331-8100</p>
                 </div>
             </div>
             <div class="row justify-content-center rowEndereco">
