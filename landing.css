@@ -33,6 +33,11 @@ body {
     text-decoration: none;
     color: #ffffff;
 }
+
+#menuPolo {
+    background-color:#0697ce;
+}
+
 /*###############################*/
 /*CONTEUDO*/
 #conteudo {
@@ -43,35 +48,66 @@ body {
 /*TARJA*/
 #tarja {
     background-color: #d5dade;
+    width: 350px;
+    margin-left: 10vw;
 }
 
 #novoPolo1 {
-    border-right: 1px solid #28466b
+    border-right: 1px solid #28466b;
+    margin-left: 0px;
+    padding-left: 0px;
 }
 
 .txtTarja {
-    font-size: 12px;
+    font-size: 16px;
     color: #28466b;
-    font-weight: bold;
     margin: 0;
+}
+
+.caixa {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
 }
 
 .tarjaValor {
     margin-left: 4px;
 }
 
+#nomeCarro {
+    margin: 15px 0 0 0;
+}
+
+#motorCarro {
+    margin: 0 0 15px 0;
+}
+
+#txtTarjaValor {
+    margin: 15px 0 0 5px;
+}
+
+#txtTarjaTaxa {
+    margin: 0 0 15px 5px;
+}
+
 #carro {
-    max-width: 100%;
+    max-width: 80%;
 }
 
 /*###############################*/
 /*formulário*/
 #txtForm1 {
     color: #205d87;
+    font-size: 20px;
 }
 
 #txtForm2 {
     color: #1f5c87;
+    font-size: 14px;
 }
 
 #btnGaranta {
@@ -120,7 +156,7 @@ body {
 }
 
 /*###############################*/
-/*LOGO VITORIAWAGEN*/
+/*MENU CIDADES*/
 #menuCidade {
     background-color: #084c7b;
     max-width: 100%;
@@ -129,6 +165,10 @@ body {
 .txtCidade {
     text-decoration: none;
     color: #ffffff;
+}
+
+#menuVitoria {
+    background-color: #0697ce;
 }
 
 /*###############################*/
@@ -163,10 +203,27 @@ body {
     text-align: center;
 }
 
-@media screen and (max-width: 576px) {
-    .txtTarja {
-        font-size: 2.5vw;
+@media screen and (max-width: 992px) {
+    #txtForm1 {
+        font-size: 18px;
     }
+
+    #txtForm2 {
+        font-size: 12px;
+    }
+
+    #tarja {
+        margin-left: 1vw;
+    }
+}
+
+@media screen and (max-width: 772px) {
+    #tarja {
+        margin-left: 20vw;
+    }
+}
+
+@media screen and (max-width: 576px) {
     #conteudo {
         margin-top: 2vw;
     }
@@ -176,8 +233,23 @@ body {
         padding-left: 10%;
         padding-bottom: 2%;
     }
+
     #txtTarjaAzul {
         font-size: 1.5vw;
     }
-    .txt
+
+    #tarja {
+        margin-left: 0vw;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .txtTarja {
+        font-size: 3.8vw;
+    }
+    
+    #tarja {
+        width: 88vw;
+        margin-left: 0;
+    }
 }

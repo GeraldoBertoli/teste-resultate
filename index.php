@@ -85,32 +85,34 @@
         </picture>
         <ul id="menu" class="nav justify-content-center">
             <li class="nav-item">
-                <p onclick="carroPolo(this)" class="nav-link txtCarros">Novo Polo</a>
+                <p id="menuPolo" onclick="carroPolo(this)" class="nav-link txtCarros">Novo Polo</a>
             </li>
             <li class="nav-item">
-                <p onclick="carroUp(this)" class="nav-link txtCarros">Up!</a>
+                <p id="menuUp" onclick="carroUp(this)" class="nav-link txtCarros">Up!</a>
             </li>
         </ul>
 
         <div id="contConteudo" class="container-fluid">
             <div id="conteudo" class="row">
                 <div class="col-md-6">
-                    <div class="col-8 justify-content-center">
-                        <div id="tarja" class="row justify-content-center">
-                            <div id="novoPolo1" class="col-4 justify-content-center">
-                                    <div class="row justify-content-center">
-                                        <p id="nomeCarro" class="txtTarja">NOVO POLO</p>
+                    <div class="col-8">
+                        <div id="tarja" class="row">
+                            <div id="novoPolo1" class="col-4 caixa">
+                                <div class="row justify-content-end">
+                                    <div class="row container justify-content-center">
+                                        <p id="nomeCarro" class="txtTarja"><strong>NOVO POLO</strong></p>
                                     </div>
-                                    <div class="row justify-content-center">
-                                        <p class="txtTarja">1.0 MPI</p>
+                                    <div class="row container justify-content-center">
+                                        <p id="motorCarro" class="txtTarja">1.0 MPI</p>
                                     </div>
+                                </div>
                             </div>
-                            <div class="col-8">
+                            <div class="col-8 caixa">
                                 <div class="row">
-                                    <p class="txtTarja tarjaValor">A PARTIR DE <strong>R$ 49.990,00</strong></p>
+                                    <p id="txtTarjaValor" class="txtTarja tarjaValor">A PARTIR DE <strong>R$ 49.990,00</strong></p>
                                 </div>
                                 <div class="row">
-                                    <p class="txtTarja tarjaValor">+ TAXA <strong>0%</strong></p>
+                                    <p id="txtTarjaTaxa" class="txtTarja tarjaValor">+ TAXA <strong>0%</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -157,10 +159,10 @@
         </div>
         <ul id="menuCidade" class="nav justify-content-center">
             <li class="nav-item">
-                <p onclick="cidadeVitoria()" class="nav-link txtCidade">Vitória</a>
+                <p id="menuVitoria" onclick="cidadeVitoria()" class="nav-link txtCidade">Vitória</a>
             </li>
             <li class="nav-item">
-                <p onclick="cidadeSerra()" class="nav-link txtCidade">Serra</a>
+                <p id="menuSerra" onclick="cidadeSerra()" class="nav-link txtCidade">Serra</a>
             </li>
         </ul>
         <div id="tarjaEndereco" class="row">
